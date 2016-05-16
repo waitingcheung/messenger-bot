@@ -25,6 +25,10 @@ You need several API keys to use this bot.
 - FB_VERIFY_TOKEN: Any string of your choice.
 - WIT_TOKEN: Create a wit app from https://wit.ai/home and find your **Server Access Token** from **Settings**.
 
+You may create a Wit story like the following.
+
+![](https://cloud.githubusercontent.com/assets/2617118/15283614/77c72254-1b7e-11e6-9c40-a168cf43635d.png)
+
 ## Testing
 
 ### Environment Variables
