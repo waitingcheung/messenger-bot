@@ -13,7 +13,10 @@ This is my facebook bot for asking coding questions. You may ask questions such 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OTlqFy6h5UY/0.jpg)](https://youtu.be/OTlqFy6h5UY)
 
-### Requirements
+## Configuration
+
+### API Keys
+
 You need several API keys to use this bot.
 - FB_PAGE_ID: 
   1. Create a Facebook page from https://developers.facebook.com/apps/
@@ -24,6 +27,8 @@ You need several API keys to use this bot.
   2. Find your token under **Meseenger** -> **Page Access Token**.
 - FB_VERIFY_TOKEN: Any string of your choice.
 - WIT_TOKEN: Create a wit app from https://wit.ai/home and find your **Server Access Token** from **Settings**.
+
+### Wit Story
 
 You may create a Wit story like the following.
 
