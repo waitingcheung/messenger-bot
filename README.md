@@ -19,7 +19,9 @@ You need several API keys to use this bot.
   1. Create a Facebook page from https://developers.facebook.com/apps/
   2. Go to your page.
   3. Your page id is under **Settings** -> **Page Info** -> **Facebook Page ID**.
-- FB_PAGE_TOKEN: Visit your page from https://developers.facebook.com and find your token under **Meseenger** -> **Page Access Token**.
+- FB_PAGE_TOKEN:
+  1. Visit your page from https://developers.facebook.com
+  2. Find your token under **Meseenger** -> **Page Access Token**.
 - FB_VERIFY_TOKEN: Any string of your choice.
 - WIT_TOKEN: Create a wit app from https://wit.ai/home and find your **Server Access Token** from **Settings**.
 
