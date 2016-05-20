@@ -7,7 +7,6 @@ This is my facebook bot for asking coding questions. You may ask questions such 
 - How do I format timestamps in Java?
 - How can I find the largest number of in an array in Swift?
 - What is the difference between null and undefined in JavaScript?
-- ...
 
 and it will send you code snippets and/or explanations such as
 ```sh
