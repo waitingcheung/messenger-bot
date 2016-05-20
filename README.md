@@ -9,9 +9,14 @@ This is my facebook bot for asking coding questions. You may ask questions such 
 - What is the difference between null and undefined in JavaScript?
 - ...
 
-### Demo
+Click [here] to visit my bot.
+
+## Demo
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OTlqFy6h5UY/0.jpg)](https://youtu.be/OTlqFy6h5UY)
+
+## Update
+- 2016 May 20: Facebook has approved my page for the permission of sending messages to users. You may message my bot for coding questions from [here].
 
 ## Configuration
 
@@ -34,6 +39,30 @@ You may create a Wit story like the following.
 
 ![](https://cloud.githubusercontent.com/assets/2617118/15283614/77c72254-1b7e-11e6-9c40-a168cf43635d.png)
 
+## Deployment to Heroku
+
+### Facebook Webhooks
+
+1. Visit your page from https://developers.facebook.com
+2. Go to **Webhooks** from the side menu.
+3. Set your **Callback URL** to the following and your **Verify Token** to your FB_VERIFY_TOKEN
+
+```sh
+https://your-app-id.herokuapp.com/fb
+```
+
+### Heroku Environment Variables
+You need to configure your environment variables FB_PAGE_ID, FB_PAGE_TOKEN, FB_VERIFY_TOKEN, WIT_TOKEN under **Settings** of your Heroku app.
+
+![](https://cloud.githubusercontent.com/assets/2617118/15424592/1ec55d02-1eb6-11e6-834b-cbf1d4796549.png)
+
+
+### Deployment
+```sh
+heroku create
+git push heroku master
+```
+
 ## Testing
 
 ### Environment Variables
@@ -53,3 +82,5 @@ npm test
 ```sh
 node src/bot
 ```
+
+[here]: https://www.facebook.com/Captain-Neko-802565366543110/
