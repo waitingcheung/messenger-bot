@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/waitingcheung/messenger-bot.svg?branch=master)](https://travis-ci.org/waitingcheung/messenger-bot)
 [![codecov](https://codecov.io/gh/waitingcheung/messenger-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/waitingcheung/messenger-bot)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/waitingcheung/messenger-bot/blob/master/LICENSE)
 
 This is my facebook bot for asking coding questions. You may ask questions such as
 - How do I format timestamps in Java?
