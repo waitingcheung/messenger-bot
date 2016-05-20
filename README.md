@@ -9,6 +9,14 @@ This is my facebook bot for asking coding questions. You may ask questions such 
 - What is the difference between null and undefined in JavaScript?
 - ...
 
+and it will send you code snippets and/or explanations such as
+```sh
+What about:
+    let numbers = [1, 6, 3, 9, 4, 6]
+    numbers.minElement()
+    numbers.maxElement()
+```
+
 Click [here] to visit my bot.
 
 ## Demo
