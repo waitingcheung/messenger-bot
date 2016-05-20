@@ -91,4 +91,11 @@ npm test
 node src/bot
 ```
 
+## Credit
+I reused soruce code and configurations from:
+- https://github.com/wit-ai/node-wit
+- https://github.com/jw84/messenger-bot-tutorial
+- https://github.com/hunkim/Wit-Facebook
+- https://github.com/santinic/how2
+
 [here]: https://www.facebook.com/Captain-Neko-802565366543110/
