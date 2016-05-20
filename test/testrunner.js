@@ -4,6 +4,13 @@ testrunner.options.coverage = true;
 testrunner.options.maxBlockDuration = 60000;
 
 testrunner.run([{
+    code: "src/bot.js",
+    tests: "test/bot.js"
+}, {
+    deps: ["src/const.js"],
+    code: "src/facebook.js",
+    tests: "test/facebook.js"
+}, {
     code: "src/pastee.js",
     tests: "test/pastee.js"
 }, {
