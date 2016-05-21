@@ -21,6 +21,8 @@ Click [here] to visit my bot.
 
 ## Demo
 
+Click below to watch a demo of my bot in YouTube.
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OTlqFy6h5UY/0.jpg)](https://youtu.be/OTlqFy6h5UY)
 
 ## Update
@@ -73,6 +75,8 @@ git push heroku master
 ```
 
 ## Testing
+
+You need to configure environment variables before testing.
 
 ### Environment Variables
 ```sh
