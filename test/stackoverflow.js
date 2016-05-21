@@ -60,3 +60,15 @@ test("ask stack overflow a question with an answer having no code blocks", funct
         });
     }, ratelimit);
 });
+
+test("ask stack overflow a question with unsupported syntax highlighting", function() {
+    expect(1);
+    stop();
+
+    setTimeout(function() {
+        main('find the largest number in an array', 'swift', false, function(answer) {
+            ok(answer, 'Answer found');
+            start();
+        });
+    }, ratelimit);
+});
