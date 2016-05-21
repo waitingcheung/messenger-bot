@@ -5,6 +5,7 @@ const stackexchange = require('stackexchange');
 const _ = require('lodash');
 const htmlentities = require('ent');
 const pastee = require('./pastee');
+const md = require('markdown-it')();
 
 var options = {
     version: 2.2
@@ -20,7 +21,7 @@ function search(text, lang, remember, callback) {
                     links: links,
                     titles: titles
                 };
-                selectedAnswer(titles, answers, 0, remember, callback);
+                selectedAnswer(titles, answers, 0, remember, lang, callback);
             } else {
                 callback('Sorry, I cannot find any reasonable answer for your query.');;
             }
@@ -76,7 +77,7 @@ function fetchQuestionAnswers(parsedLink, callback) {
     }, [parsedLink.questionId]);
 }
 
-function selectedAnswer(titles, answers, index, remember, callback) {
+function selectedAnswer(titles, answers, index, remember, lang, callback) {
     if (answers.length === 0) {
         console.log('Cannot find any reasonable answer for your query.');
         if (!lang) {
@@ -85,20 +86,100 @@ function selectedAnswer(titles, answers, index, remember, callback) {
         process.exit(1);
     }
 
-    // var markdown = utils.toEscapedMarkdown(answers[index].body_markdown);
-    var markdown = htmlentities.decode(answers[index].body_markdown);
+    var bodyMarkdown = answers[index].body_markdown;
+    var codeBlocks = findCodeBlocks(bodyMarkdown);
 
-    var title = titles[index];
-    // console.log(title + '\n');
-    // console.log(markdown);
+    if (codeBlocks.length > 0) {
+        // Answer contains some code blocks.
+        var code = '';
+        for (var i = 0; i < codeBlocks.length; i++) {
+            code += htmlentities.decode(codeBlocks[i].content) + '\n';
+        }
+        code = code.slice(0, -1);
 
-    if (markdown.length >= 290) {
-        pastee.pasteContent(markdown, function(url) {
-            callback('\n\n' + markdown.substring(0, 289) + ' ...\n' + url);
+        pastee.pasteContent({
+            paste: code,
+            language: getPasteLanguage(lang)
+        }, function(url) {
+            pasteMarkdown(bodyMarkdown, true, function(data) {
+                var button = (typeof data === 'string') ? createButton(url, data) : createButton(url, data.text, data.url);
+                callback(button);
+            });
         });
     } else {
-        callback('\n\n' + markdown);
+        // Answer does not contain any code blocks. Return the answer as it is.
+        pasteMarkdown(bodyMarkdown, false, callback);
     }
+}
+
+function findCodeBlocks(markdown) {
+    return md.parse(markdown).filter(function(token) {
+        return token.type === 'code_block';
+    });
+}
+
+function getPasteLanguage(lang) {
+    var values = {
+        'bash': 'bash',
+        'c': 'c',
+        'c++': 'cpp',
+        'java': 'java',
+        'javascript': 'javascript',
+        'php': 'php',
+        'python': 'python',
+        'ruby': 'ruby'
+    };
+    return values[lang.toLowerCase()] || 'plain';
+}
+
+function pasteMarkdown(bodyMarkdown, separateURL, callback) {
+    var markdown = htmlentities.decode(bodyMarkdown);
+
+    if (separateURL) {
+        if (markdown.length >= 320) {
+            pastee.pasteContent(markdown, function(url) {
+                callback({
+                    text: markdown.substring(0, 319),
+                    url: url
+                });
+            });
+        } else {
+            callback(markdown);
+        }
+    } else {
+        if (markdown.length >= 290) {
+            pastee.pasteContent(markdown, function(url) {
+                callback(markdown.substring(0, 289) + ' ...\n' + url);
+            });
+        } else {
+            callback(markdown);
+        }
+    }
+}
+
+function createButton(codeURL, text, textURL) {
+    var button = {
+        "type": "template",
+        "payload": {
+            "template_type": "button",
+            "text": text,
+            "buttons": [{
+                "type": "web_url",
+                "url": codeURL,
+                "title": "Download Code"
+            }]
+        }
+    };
+
+    if (textURL) {
+        button.payload.buttons.unshift({
+            "type": "web_url",
+            "url": textURL,
+            "title": "Read Remaining"
+        });
+    }
+
+    return button;
 }
 
 function main(text, lang, remember, callback) {

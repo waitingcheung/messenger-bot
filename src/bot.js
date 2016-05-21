@@ -65,27 +65,36 @@ const actions = {
     // See https://wit.ai/docs/quickstart
 
     ['ask-stack-overflow'](sessionId, context, cb) {
+        const recipientId = context._fbid_;
         stackoverflow.main(context.text, context.prog_lang, false, function(answer) {
-            context.answer = answer;
-            cb(context);
+            FB.fbMessage(recipientId, answer, (err, data) => {
+                if (err) {
+                    console.log(
+                        'Oops! An error occurred while forwarding the response to',
+                        recipientId,
+                        ':',
+                        err
+                    );
+                }
+                cb(context);
+            });
         });
     }, ['clear-context'](sessionId, context, cb) {
         delete context.text;
         delete context.prog_lang;
-        delete context.answer;
         cb(context);
     },
 };
 
 const getWit = () => {
-  return new Wit(Config.WIT_TOKEN, actions);
+    return new Wit(Config.WIT_TOKEN, actions);
 };
 
 exports.getWit = getWit;
 
 // bot testing mode
 if (require.main === module) {
-  console.log("Bot testing mode.");
-  const client = getWit();
-  client.interactive();
+    console.log("Bot testing mode.");
+    const client = getWit();
+    client.interactive();
 }
