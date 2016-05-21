@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/waitingcheung/messenger-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/waitingcheung/messenger-bot)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/waitingcheung/messenger-bot/blob/master/LICENSE)
 
-This is my facebook bot for asking coding questions. You may ask questions such as
+This is my facebook bot for answering coding questions. You may ask questions such as
 - How do I format timestamps in Java?
 - How can I find the largest number of in an array in Swift?
 - What is the difference between null and undefined in JavaScript?
@@ -17,7 +17,9 @@ What about:
     numbers.maxElement()
 ```
 
-Click [here] to visit my bot.
+Click [here] to message my bot.
+
+Note: My bot is far from passing the [Turing test]. If you interact with it in an unexpected way, you may not hear an answer or hear something surprising :wink:
 
 ## Demo
 
@@ -104,5 +106,6 @@ I reused soruce code and configurations from:
 - https://github.com/santinic/how2
 - https://developers.facebook.com/docs/messenger-platform
 
-[here]: https://www.facebook.com/Captain-Neko-802565366543110/
+[here]: http://m.me/802565366543110
 [download the code]: https://cloud.githubusercontent.com/assets/2617118/15448246/cbf361c6-1f8e-11e6-8a1e-cb425f5b66ca.png
+[Turing test]: https://en.wikipedia.org/wiki/Turing_test
