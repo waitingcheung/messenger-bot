@@ -113,7 +113,7 @@ function selectedAnswer(titles, answers, index, remember, lang, callback) {
 }
 
 function findCodeBlocks(markdown) {
-    return md.parse(markdown).filter(function(token) {
+    return md.parse(markdown, {}).filter(function(token) {
         return token.type === 'code_block';
     });
 }

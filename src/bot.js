@@ -67,6 +67,7 @@ const actions = {
     ['ask-stack-overflow'](sessionId, context, cb) {
         const recipientId = context._fbid_;
         stackoverflow.main(context.text, context.prog_lang, false, function(answer) {
+            console.log(answer);
             FB.fbMessage(recipientId, answer, (err, data) => {
                 if (err) {
                     console.log(

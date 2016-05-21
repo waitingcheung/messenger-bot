@@ -48,3 +48,15 @@ test("ask stack overflow with long answer", function() {
         });
     }, ratelimit);
 });
+
+test("ask stack overflow a question with an answer having no code blocks", function() {
+    expect(1);
+    stop();
+
+    setTimeout(function() {
+        main('document.write considered a bad practice', 'javascript', false, function(answer) {
+            ok(answer, 'Answer found');
+            start();
+        });
+    }, ratelimit);
+});
