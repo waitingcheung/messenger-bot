@@ -24,6 +24,7 @@ Click [here] to visit my bot.
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OTlqFy6h5UY/0.jpg)](https://youtu.be/OTlqFy6h5UY)
 
 ## Update
+- 2016 May 21: New Feature. My bot can now extract code blocks from the answer and create a link to a paste service for you to [download the code].
 - 2016 May 20: Facebook has approved my page for the permission of sending messages to users. You may message my bot for coding questions from [here].
 
 ## Configuration
@@ -45,7 +46,7 @@ You need several API keys to use this bot.
 
 You may create a Wit story like the following.
 
-![](https://cloud.githubusercontent.com/assets/2617118/15283614/77c72254-1b7e-11e6-9c40-a168cf43635d.png)
+![](https://cloud.githubusercontent.com/assets/2617118/15448237/a0fbec22-1f8e-11e6-8d81-e23d3fccf76e.png)
 
 ## Deployment to Heroku
 
@@ -97,5 +98,7 @@ I reused soruce code and configurations from:
 - https://github.com/jw84/messenger-bot-tutorial
 - https://github.com/hunkim/Wit-Facebook
 - https://github.com/santinic/how2
+- https://developers.facebook.com/docs/messenger-platform
 
 [here]: https://www.facebook.com/Captain-Neko-802565366543110/
+[download the code]: https://cloud.githubusercontent.com/assets/2617118/15448246/cbf361c6-1f8e-11e6-8a1e-cb425f5b66ca.png
