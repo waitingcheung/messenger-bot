@@ -67,7 +67,7 @@ Take the blue pill :large_blue_circle: for the easy way:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Following the steps below to setup Facebook Webhooks after deployment.
+After deployment, follow the steps below to setup Facebook Webhooks.
 
 Take the red pill :red_circle: for the flexible way:
 
