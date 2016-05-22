@@ -17,7 +17,7 @@ What about:
     numbers.maxElement()
 ```
 
-Click [here] to message my bot.
+Click [<img src="https://cloud.githubusercontent.com/assets/2617118/15451713/b72a907c-2004-11e6-8874-73745031c6c7.png" width="16"/>](http://m.me/802565366543110) to message my bot.
 
 Note: My bot is far from passing the [Turing test]. If you interact with it in an unexpected way, you may not hear an answer or hear something surprising :wink:
 
