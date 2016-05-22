@@ -67,16 +67,19 @@ Take the blue pill :large_blue_circle: for the easy way:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+Following the steps below to setup Facebook Webhooks after deployment.
+
 Take the red pill :red_circle: for the flexible way:
 
 ### Facebook Webhooks
 
-1. Visit your page from https://developers.facebook.com
-2. Go to **Webhooks** from the side menu.
-3. Set your **Callback URL** to the following and your **Verify Token** to your FB_VERIFY_TOKEN
+1. Create a Heroku app if you do not have one. 
+2. Visit your page from https://developers.facebook.com
+3. Go to **Webhooks** from the side menu.
+4. Set your **Callback URL** to the following and your **Verify Token** to your FB_VERIFY_TOKEN
 
 ```sh
-https://your-app-id.herokuapp.com/fb
+https://your-heroku-app-id.herokuapp.com/fb
 ```
 
 ### Heroku Environment Variables
