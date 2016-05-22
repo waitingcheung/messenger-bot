@@ -4,12 +4,19 @@
 [![codecov](https://codecov.io/gh/waitingcheung/messenger-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/waitingcheung/messenger-bot)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/waitingcheung/messenger-bot/blob/master/LICENSE)
 
-This is my Facebook bot for answering coding questions. You may ask questions such as
+This is my Facebook bot for answering coding questions. You may ask questions in the form
+
+```sh
+How to [description of task] in [programming language]?
+```
+
+such as
 - How do I format timestamps in Java?
 - How can I find the largest number of in an array in Swift?
 - What is the difference between null and undefined in JavaScript?
 
 and it will send you code snippets and/or explanations such as
+
 ```sh
 What about:
     let numbers = [1, 6, 3, 9, 4, 6]
