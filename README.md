@@ -61,6 +61,14 @@ You may create a Wit story like the following.
 
 ## Deployment to Heroku
 
+There are two ways to deploy this app to Heroku, the easy way or the flexible way.
+
+Take the blue pill :large_blue_circle: for the easy way:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+Take the red pill :red_circle: for the flexible way:
+
 ### Facebook Webhooks
 
 1. Visit your page from https://developers.facebook.com
