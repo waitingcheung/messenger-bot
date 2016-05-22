@@ -1,0 +1,25 @@
+{
+    "name": "Facebook Messenger Bot",
+    "description": "Facebook messenger bot for answering coding questions",
+    "repository": "https://github.com/waitingcheung/messenger-bot",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "keywords": ["node", "express", "github", "wit", "Facebook"],
+    "env": {
+        "WIT_TOKEN": {
+            "description": "Server Access Token from wit.ai (see your wit app settings).",
+            "required": true
+        },
+        "FB_PAGE_TOKEN": {
+            "description": "Facebook Page Token from https://developers.facebook.com/apps/",
+            "required": true
+        },
+        "FB_VERIFY_TOKEN": {
+            "description": "Facebook Verification Token. Any string of your choice.",
+            "required": true
+        },
+        "FB_PAGE_ID": {
+            "description": "Facebook Page Id from the Page Info of your page.",
+            "required": true
+        }
+    }
+}
