@@ -7,7 +7,7 @@
 This is my Facebook bot for answering coding questions. You may ask questions in the form
 
 ```sh
-How to [description of task] in [programming language]?
+How to [task description] in [programming language]?
 ```
 
 such as
