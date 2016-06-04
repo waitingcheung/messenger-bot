@@ -67,9 +67,7 @@ const actions = {
     ['ask-stack-overflow'](sessionId, context, cb) {
         const recipientId = context._fbid_;
 
-        if (!context.text) {
-            sendHelpMessage(recipientId, context, cb);
-        } else {
+        if (context.text) {
             stackoverflow.main(context.text, context.prog_lang, false, function(answer) {
                 console.log(answer);
                 FB.fbMessage(recipientId, answer, (err, data) => {
@@ -84,6 +82,8 @@ const actions = {
                     cb(context);
                 });
             });
+        } else {
+            sendHelpMessage(recipientId, context, cb);
         }
     }, ['clear-context'](sessionId, context, cb) {
         delete context.text;
