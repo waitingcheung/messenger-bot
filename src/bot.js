@@ -66,26 +66,50 @@ const actions = {
 
     ['ask-stack-overflow'](sessionId, context, cb) {
         const recipientId = context._fbid_;
-        stackoverflow.main(context.text, context.prog_lang, false, function(answer) {
-            console.log(answer);
-            FB.fbMessage(recipientId, answer, (err, data) => {
-                if (err) {
-                    console.log(
-                        'Oops! An error occurred while forwarding the response to',
-                        recipientId,
-                        ':',
-                        err
-                    );
-                }
-                cb(context);
+
+        if (!context.text) {
+            sendHelpMessage(recipientId, context, cb);
+        } else {
+            stackoverflow.main(context.text, context.prog_lang, false, function(answer) {
+                console.log(answer);
+                FB.fbMessage(recipientId, answer, (err, data) => {
+                    if (err) {
+                        console.log(
+                            'Oops! An error occurred while forwarding the response to',
+                            recipientId,
+                            ':',
+                            err
+                        );
+                    }
+                    cb(context);
+                });
             });
-        });
+        }
     }, ['clear-context'](sessionId, context, cb) {
         delete context.text;
         delete context.prog_lang;
         cb(context);
     },
 };
+
+function getHelpMessage() {
+    return 'Sorry. I don\'t understand. Some things you can ask me:' + '\n\n' +
+        'How to [task description] in [programming language]?';
+}
+
+function sendHelpMessage(recipientId, context, callback) {
+    FB.fbMessage(recipientId, getHelpMessage(), (err, data) => {
+        if (err) {
+            console.log(
+                'Oops! An error occurred while forwarding the response to',
+                recipientId,
+                ':',
+                err
+            );
+        }
+        callback(context);
+    });
+}
 
 const getWit = () => {
     return new Wit(Config.WIT_TOKEN, actions);
