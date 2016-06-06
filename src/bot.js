@@ -4,6 +4,7 @@
 const Wit = require('node-wit').Wit;
 const FB = require('./facebook');
 const Config = require('./const');
+const assert = require('assert');
 
 const stackoverflow = require('./stackoverflow');
 
@@ -93,8 +94,14 @@ const actions = {
 };
 
 function getHelpMessage() {
-    return 'Sorry. I don\'t understand. Some things you can ask me:' + '\n\n' +
-        'How to [task description] in [programming language]?';
+    var msg = 'Sorry. I don\'t understand. Some things you can ask me:' + '\n\n' +
+        'How do I format timestamps in Java?' + '\n\n' +
+        'How can I find the largest number of in an array in Swift?' + '\n\n' +
+        'What is the difference between null and undefined in JavaScript?';
+    
+    assert(msg.length <= 320, 'Facebook has a length limit of 320 characters per message.');
+    
+    return msg;
 }
 
 function sendHelpMessage(recipientId, context, callback) {
