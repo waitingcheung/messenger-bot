@@ -26,8 +26,6 @@ What about:
 
 Click [<img src="https://cloud.githubusercontent.com/assets/2617118/15451713/b72a907c-2004-11e6-8874-73745031c6c7.png" width="16"/>](http://m.me/802565366543110) to message my bot.
 
-Note: My bot is far from passing the [Turing test]. If you interact with it in an unexpected way, you may not hear an answer or hear something surprising :wink:
-
 ## Demo
 
 Click below to watch a demo of my bot in YouTube.
@@ -61,17 +59,17 @@ You may create a Wit story like the following.
 
 ## Deployment to Heroku
 
-There are two ways to deploy this app to Heroku, the easy way or the flexible way.
+There are two ways to deploy this app to Heroku, automatic deploys or manual deploys.
 
-Take the blue pill :large_blue_circle: for the easy way:
+### Automatic Deploys
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 After deployment, follow the steps below to setup Facebook Webhooks.
 
-Take the red pill :red_circle: for the flexible way:
+### Manual Deploys
 
-### Facebook Webhooks
+#### Facebook Webhooks
 
 1. Create a Heroku app if you do not have one. 
 2. Visit your page from https://developers.facebook.com
@@ -82,13 +80,13 @@ Take the red pill :red_circle: for the flexible way:
 https://your-heroku-app-id.herokuapp.com/fb
 ```
 
-### Heroku Environment Variables
+#### Heroku Environment Variables
 You need to configure your environment variables FB_PAGE_ID, FB_PAGE_TOKEN, FB_VERIFY_TOKEN, WIT_TOKEN under **Settings** of your Heroku app.
 
 ![](https://cloud.githubusercontent.com/assets/2617118/15424592/1ec55d02-1eb6-11e6-834b-cbf1d4796549.png)
 
 
-### Deployment
+#### Deployment
 ```sh
 heroku create
 git push heroku master
